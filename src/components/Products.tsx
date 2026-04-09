@@ -26,7 +26,7 @@ const products = [
   {
     name: "Marbre Noir",
     description: "Luxure et caractère audacieux",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=85",
+    image: "https://images.unsplash.com/photo-1550053808-52a75a05955d?w=600&q=85",
     alt: "Marbre noir luxueux, collection Marmaris Marble",
   },
   {

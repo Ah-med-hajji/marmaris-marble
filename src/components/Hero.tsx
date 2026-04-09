@@ -10,29 +10,28 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal"
     >
       {/* Background Image */}
       <Image
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=85"
+        src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=85"
         alt="Texture de marbre luxueux, Marmaris Marble"
         fill
         className="object-cover"
         priority
         sizes="100vw"
       />
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-charcoal/60" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-charcoal/50 z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-[2] text-center px-4 max-w-4xl mx-auto pt-20">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
         >
-          {/* TODO: Replace with real company name */}
           {t("title")}
         </motion.h1>
 

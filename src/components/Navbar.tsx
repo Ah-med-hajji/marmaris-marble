@@ -38,13 +38,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-3">
-          <Image
-            src="/images/logo.png"
-            alt="Marmaris Marble"
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
+          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+            <Image
+              src="/images/logo.png"
+              alt="Marmaris Marble"
+              width={44}
+              height={44}
+              className="object-contain"
+            />
+          </div>
           <span
             className={`font-serif text-xl font-bold ${
               scrolled ? "text-charcoal" : "text-white"
