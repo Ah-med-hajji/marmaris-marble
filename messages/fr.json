@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "Thala Marble — Le Cœur du Marbre Tunisien",
+    "description": "Découvrez le marbre authentique de Thala, Kasserine. Qualité exceptionnelle, variété de couleurs, savoir-faire artisanal tunisien."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "products": "Nos Marbres",
+    "contact": "Contact",
+    "language": "AR"
+  },
+  "hero": {
+    "title": "Thala Marble",
+    "tagline": "Le Cœur du Marbre Tunisien — Directement de Thala, Kasserine",
+    "cta": "Découvrir Notre Collection"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "subtitle": "L'excellence du marbre tunisien depuis Thala",
+    "description1": "Nichée au cœur de la région de Kasserine, la ville de Thala est reconnue comme la capitale du marbre en Tunisie. Nos carrières recèlent une diversité exceptionnelle de marbres, allant du blanc pur au gris élégant, en passant par des teintes beige et dorées.",
+    "description2": "Forts d'un savoir-faire artisanal transmis de génération en génération, nous sélectionnons et travaillons chaque bloc avec une attention minutieuse pour garantir une qualité irréprochable. Notre engagement : vous offrir le meilleur de la pierre naturelle tunisienne.",
+    "highlights": {
+      "location": "Thala, Kasserine, Tunisie",
+      "quality": "Qualité Premium",
+      "variety": "Variété Exceptionnelle",
+      "authentic": "Pierre Authentique Tunisienne"
+    }
+  },
+  "products": {
+    "title": "Notre Collection",
+    "subtitle": "Des marbres d'exception pour tous vos projets"
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "N'hésitez pas à nous contacter pour toute demande",
+    "address": "Thala, Kasserine, Tunisie",
+    "whatsapp": "Contactez-nous sur WhatsApp",
+    "facebook": "Suivez-nous sur Facebook",
+    "location": "Notre Emplacement"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "location": "Thala, Kasserine, Tunisie"
+  }
+}
