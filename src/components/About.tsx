@@ -64,8 +64,8 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
-                alt="Marble quarry in Thala"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85"
+                alt="Carrière de marbre à Thala, Kasserine, Tunisie"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

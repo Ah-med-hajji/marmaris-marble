@@ -40,18 +40,17 @@ export default function Navbar() {
         <Link href={`/${locale}`} className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
-            alt="Thala Marble"
+            alt="Marmaris Marble"
             width={48}
             height={48}
             className="rounded-full"
           />
-          {/* TODO: Replace with real company name */}
           <span
             className={`font-serif text-xl font-bold ${
               scrolled ? "text-charcoal" : "text-white"
             }`}
           >
-            Thala Marble
+            Marmaris Marble
           </span>
         </Link>
 

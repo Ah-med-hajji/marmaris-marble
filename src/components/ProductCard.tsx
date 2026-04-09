@@ -7,6 +7,7 @@ interface ProductCardProps {
   name: string;
   description: string;
   image: string;
+  alt: string;
   index: number;
 }
 
@@ -14,6 +15,7 @@ export default function ProductCard({
   name,
   description,
   image,
+  alt,
   index,
 }: ProductCardProps) {
   return (
@@ -26,7 +28,7 @@ export default function ProductCard({
     >
       <Image
         src={image}
-        alt={name}
+        alt={alt}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-110"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

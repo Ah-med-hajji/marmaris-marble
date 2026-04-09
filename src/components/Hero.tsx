@@ -14,8 +14,8 @@ export default function Hero() {
     >
       {/* Background Image */}
       <Image
-        src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80"
-        alt="Marble texture"
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=85"
+        alt="Texture de marbre luxueux, Marmaris Marble"
         fill
         className="object-cover"
         priority

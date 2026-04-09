@@ -26,20 +26,122 @@ const notoArabic = Noto_Sans_Arabic({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  // TODO: Replace with real company name
-  title: "Thala Marble — Le Cœur du Marbre Tunisien",
-  description:
-    "Découvrez le marbre authentique de Thala, Kasserine. Qualité exceptionnelle, variété de couleurs, savoir-faire artisanal tunisien.",
-  openGraph: {
-    title: "Thala Marble — Le Cœur du Marbre Tunisien",
+// TODO: Replace SITE_URL with your production domain
+const SITE_URL = "https://marmarismarble.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isAr = locale === "ar";
+
+  const title = isAr
+    ? "Marmaris Marble | رخام تونسي عالي الجودة — تالة، القصرين"
+    : "Marmaris Marble | Marbre Tunisien de Qualité — Thala, Kasserine";
+
+  const description = isAr
+    ? "اكتشفوا مجموعة رخام تالة الأصيلة من القصرين، تونس. رخام أبيض، بيج، رمادي وأسود بجودة استثنائية وحرفية تونسية."
+    : "Découvrez le marbre authentique de Thala, Kasserine. Blanc, beige, gris et noir — qualité premium, variété exceptionnelle, savoir-faire artisanal tunisien.";
+
+  return {
+    title,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: `${SITE_URL}/${locale}`,
+      languages: {
+        fr: `${SITE_URL}/fr`,
+        ar: `${SITE_URL}/ar`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: isAr ? "ar_TN" : "fr_TN",
+      url: `${SITE_URL}/${locale}`,
+      siteName: "Marmaris Marble",
+      images: [
+        {
+          url: "/images/logo.png",
+          width: 1200,
+          height: 630,
+          alt: "Marmaris Marble — Marbre Tunisien",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/logo.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+// JSON-LD structured data for LocalBusiness
+function LocalBusinessSchema({ locale }: { locale: string }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
+    name: "Marmaris Marble",
     description:
-      "Découvrez le marbre authentique de Thala, Kasserine. Qualité exceptionnelle, variété de couleurs, savoir-faire artisanal tunisien.",
-    type: "website",
-    locale: "fr_TN",
-    images: ["/images/logo.png"],
-  },
-};
+      "Marbre authentique de Thala, Kasserine, Tunisie. Qualité premium, variété de couleurs, savoir-faire artisanal tunisien depuis des générations.",
+    url: SITE_URL,
+    // TODO: Replace with real telephone number
+    telephone: "+216-00-000-000",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Thala",
+      addressLocality: "Thala",
+      addressRegion: "Kasserine",
+      addressCountry: "TN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 35.55,
+      longitude: 8.65,
+    },
+    image: `${SITE_URL}/images/logo.png`,
+    priceRange: "$$",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "17:00",
+    },
+    sameAs: [
+      // TODO: Replace with real Facebook page
+      "https://facebook.com/marmarismarble",
+    ],
+    inLanguage: locale === "ar" ? "ar-TN" : "fr-TN",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 
 export default async function LocaleLayout({
   children,
@@ -63,6 +165,9 @@ export default async function LocaleLayout({
       dir={isRTL ? "rtl" : "ltr"}
       className={`${playfair.variable} ${inter.variable} ${notoArabic.variable}`}
     >
+      <head>
+        <LocalBusinessSchema locale={locale} />
+      </head>
       <body className={isRTL ? "font-arabic" : "font-sans"}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
