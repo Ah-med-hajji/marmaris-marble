@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -26,8 +27,12 @@ const notoArabic = Noto_Sans_Arabic({
   display: "swap",
 });
 
-// TODO: Replace SITE_URL with your production domain
-const SITE_URL = "https://marmarismarble.com";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://marmarismarble.com";
+const PHONE = process.env.NEXT_PUBLIC_PHONE || "+216-00-000-000";
+const FACEBOOK = process.env.NEXT_PUBLIC_FACEBOOK || "https://facebook.com/marmarismarble";
+const MAP_LAT = process.env.NEXT_PUBLIC_MAP_LAT || "35.55";
+const MAP_LNG = process.env.NEXT_PUBLIC_MAP_LNG || "8.65";
 
 export async function generateMetadata({
   params,
@@ -99,8 +104,7 @@ function LocalBusinessSchema({ locale }: { locale: string }) {
     description:
       "Marbre authentique de Thala, Kasserine, Tunisie. Qualité premium, variété de couleurs, savoir-faire artisanal tunisien depuis des générations.",
     url: SITE_URL,
-    // TODO: Replace with real telephone number
-    telephone: "+216-00-000-000",
+    telephone: PHONE,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Thala",
@@ -110,8 +114,8 @@ function LocalBusinessSchema({ locale }: { locale: string }) {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 35.55,
-      longitude: 8.65,
+      latitude: parseFloat(MAP_LAT),
+      longitude: parseFloat(MAP_LNG),
     },
     image: `${SITE_URL}/images/logo.png`,
     priceRange: "$$",
@@ -128,10 +132,7 @@ function LocalBusinessSchema({ locale }: { locale: string }) {
       opens: "08:00",
       closes: "17:00",
     },
-    sameAs: [
-      // TODO: Replace with real Facebook page
-      "https://facebook.com/marmarismarble",
-    ],
+    sameAs: [FACEBOOK],
     inLanguage: locale === "ar" ? "ar-TN" : "fr-TN",
   };
 
@@ -167,12 +168,22 @@ export default async function LocaleLayout({
     >
       <head>
         <LocalBusinessSchema locale={locale} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <meta name="theme-color" content="#1a1a1a" />
       </head>
       <body className={isRTL ? "font-arabic" : "font-sans"}>
         <NextIntlClientProvider messages={messages}>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-white focus:px-4 focus:py-2 focus:rounded"
+          >
+            {locale === "ar" ? "انتقل إلى المحتوى الرئيسي" : "Aller au contenu principal"}
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>

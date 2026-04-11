@@ -29,17 +29,85 @@
   },
   "products": {
     "title": "Notre Collection",
-    "subtitle": "Des marbres d'exception pour tous vos projets"
+    "subtitle": "Des marbres d'exception pour tous vos projets",
+    "items": {
+      "blanc": {
+        "name": "Marbre Blanc de Thala",
+        "description": "Pureté et élégance intemporelle",
+        "alt": "Marbre blanc de Thala, Kasserine, Tunisie"
+      },
+      "beche": {
+        "name": "Marbre Béché Crème",
+        "description": "Chaleur et douceur naturelle",
+        "alt": "Marbre béché crème, pierre naturelle tunisienne"
+      },
+      "gris": {
+        "name": "Marbre Gris",
+        "description": "Sophistication et modernité",
+        "alt": "Marbre gris de Thala, Kasserine, Tunisie"
+      },
+      "noir": {
+        "name": "Marbre Noir",
+        "description": "Luxure et caractère audacieux",
+        "alt": "Marbre noir luxueux, collection Marmaris Marble"
+      },
+      "jaune": {
+        "name": "Marbre Jaune Doré",
+        "description": "Éclat et noblesse",
+        "alt": "Marbre jaune doré, pierre naturelle de Tunisie"
+      },
+      "breche": {
+        "name": "Marbre Brèche",
+        "description": "Veines uniques et authenticité",
+        "alt": "Marbre brèche éclaté de Thala, Kasserine, Tunisie"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "La confiance de nos partenaires parle d'elle-même",
+    "items": {
+      "client1": {
+        "text": "La qualité du marbre de Thala est exceptionnelle. Marmaris Marble a livré notre commande dans les délais avec un soin remarquable. Je recommande vivement.",
+        "name": "Ahmed Ben Ali",
+        "role": "Architecte — Tunis",
+        "initials": "AB"
+      },
+      "client2": {
+        "text": "Nous avons utilisé le marbre gris de Marmaris pour notre hôtel. Le résultat est époustouflant. Un partenaire fiable et professionnel.",
+        "name": "Sophie Martin",
+        "role": "Directrice Hôtellerie — Sousse",
+        "initials": "SM"
+      },
+      "client3": {
+        "text": "Le savoir-faire artisanal se ressent dans chaque pièce. Le marbre blanc de Thala a transformé notre villa. Merci pour ce travail remarquable.",
+        "name": "Karim Bouazizi",
+        "role": "Promoteur Immobilier — Hammamet",
+        "initials": "KB"
+      }
+    }
   },
   "contact": {
     "title": "Contactez-Nous",
     "subtitle": "N'hésitez pas à nous contacter pour toute demande",
     "address": "Thala, Kasserine, Tunisie",
-    "whatsapp": "Contactez-nous sur WhatsApp",
-    "facebook": "Suivez-nous sur Facebook",
-    "location": "Notre Emplacement"
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook",
+    "location": "Notre Emplacement",
+    "formName": "Nom complet",
+    "formNamePlaceholder": "Votre nom",
+    "formEmail": "Adresse e-mail",
+    "formEmailPlaceholder": "votre@email.com",
+    "formMessage": "Votre message",
+    "formMessagePlaceholder": "Décrivez votre projet ou votre demande...",
+    "formSubmit": "Envoyer via WhatsApp",
+    "formSending": "Envoi en cours...",
+    "formSent": "Message envoyé !"
   },
   "footer": {
+    "description": "Marbre authentique de Thala, Kasserine. Qualité premium et savoir-faire artisanal tunisien depuis des générations.",
+    "links": "Liens Rapides",
+    "contactInfo": "Coordonnées",
     "rights": "Tous droits réservés.",
     "location": "Thala, Kasserine, Tunisie"
   }
